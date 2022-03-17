@@ -39,3 +39,15 @@ resource "aws_route" "private-ngw-route" {
   destination_cidr_block    = "0.0.0.0/0"
   gateway_id                = aws_nat_gateway.ngw.id
 }
+
+resource "aws_route" "public-peer-route" {
+  route_table_id            = aws_route_table.public-table.id
+  destination_cidr_block    = data.aws_vpc.default.cidr_block
+  vpc_peering_connection_id = aws_vpc_peering_connection.peer-connection.id
+}
+
+resource "aws_route" "private-peer-route" {
+  route_table_id            = aws_route_table.private-table.id
+  destination_cidr_block    = data.aws_vpc.default.cidr_block
+  vpc_peering_connection_id = aws_vpc_peering_connection.peer-connection.id
+}
