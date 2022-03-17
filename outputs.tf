@@ -21,4 +21,3 @@ output "PUBLIC_SUBNET_CIDR" {
 output "PRIVATE_SUBNET_CIDR" {
   value = var.PRIVATE_SUBNET_CIDR
 }
-
