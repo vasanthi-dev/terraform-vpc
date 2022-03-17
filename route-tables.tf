@@ -51,3 +51,9 @@ resource "aws_route" "private-peer-route" {
   destination_cidr_block    = data.aws_vpc.default.cidr_block
   vpc_peering_connection_id = aws_vpc_peering_connection.peer-connection.id
 }
+
+resource "aws_route" "default-rtable-route" {
+  route_table_id            = data.aws_vpc.default.main_route_table_id
+  destination_cidr_block    = var.VPC_CIDR
+  vpc_peering_connection_id = aws_vpc_peering_connection.peer-connection.id
+}
