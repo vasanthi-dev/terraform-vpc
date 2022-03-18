@@ -5,6 +5,7 @@ data "aws_vpc" "default" {
 }
 
 data "aws_route53_zone" "privatezone" {
+  name         = "roboshop.internal"
   private_zone = true
 }
 
