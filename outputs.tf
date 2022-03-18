@@ -29,3 +29,7 @@ output "DEFAULT_VPC_ID" {
 output "DEFAULT_VPC_CIDR" {
   value = data.aws_vpc.default.cidr_block
 }
+
+output "PRIVATE_HOSTED_ZONEID" {
+  value = data.aws_route53_zone.privatezone.id
+}

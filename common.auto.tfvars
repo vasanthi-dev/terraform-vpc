@@ -1,1 +1,2 @@
 AZS = ["us-east-1c", "us-east-1d"]
+//PRIVATE_HOSTED_ZONEID ="Z01304753HAJF01BJ7NCL"
